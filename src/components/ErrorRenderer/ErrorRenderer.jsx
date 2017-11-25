@@ -1,5 +1,5 @@
 import styles from './ErrorRenderer.less';
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const ErrorRenderer = () => {

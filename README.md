@@ -2,6 +2,4 @@
 
 Base template for react redux app with webpack and prettier
 
-npm i
-
-npm start
+npm i > npm build > npm start

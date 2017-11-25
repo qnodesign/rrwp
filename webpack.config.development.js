@@ -18,11 +18,9 @@ const devServer = {
   progress: false,
 };
 
-const entry = [
-  `webpack-dev-server/client?http://localhost:${portSrc.port}`,
-  'webpack/hot/only-dev-server',
-  './src/index',
-];
+const entry = {
+  rrwp: [`webpack-dev-server/client?http://localhost:${portSrc.port}`, 'webpack/hot/only-dev-server', './src/index'],
+};
 
 const plugins = [
   new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"' }),

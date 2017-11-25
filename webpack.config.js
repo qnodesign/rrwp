@@ -52,7 +52,7 @@ const rules = [
   { test: /\.css$/, use: ['style-loader', 'css-loader'] },
   { test: /\.(png|jpg|jpeg|gif|ico)$/, use: 'url-loader?limit=1name=images/[name].[ext]' },
   { test: /\.svg$/, use: 'svg-url-loader?limit=1name=images/[name].[ext]' },
-  { test: /\.(woff|woff2))$/, use: 'file-loader?name=fonts/[name].[ext]' },
+  { test: /\.(woff|woff2)$/, use: 'file-loader?name=fonts/[name].[ext]' },
   {
     test: /\.less$/,
     loader: ExtractTextPlugin.extract({
