@@ -14,10 +14,10 @@ const Test = props => {
   };
 
   const toMale = () => {
-    go('/Test/male');
+    go('Test/male');
   };
   const toFemale = () => {
-    go('/Test/female');
+    go('Test/female');
   };
 
   return (
@@ -26,6 +26,7 @@ const Test = props => {
       {target && <h2>{translations.target}</h2>}
       <p>{translations.heading}</p>
       <button onClick={toMale}>Male</button>
+      <button onClick={toFemale}>Female</button>
     </div>
   );
 };
