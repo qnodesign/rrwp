@@ -15,7 +15,7 @@
     "amd": true,
     "es6": true,
     "node": true,
-    "jset": true
+    "jest": true
   },
   "globals": {
     "expect": true
@@ -32,20 +32,20 @@
     "no-unreachable": "warn",
     "no-unused-vars": "error",
     "quotes": ["error", "single"],
+    "react/require-render-return": "error",
+    "react/self-closing-comp": "error",
     "react/jsx-boolean-value": "error",
     "react/jsx-closing-bracket-location": ["error", "tag-aligned"],
     "react/jsx-curly-spacing": ["error", "never"],
     "react/jsx-no-bind": ["error", { "allowArrowFunctions": true }],
     "react/jsx-pascal-case": "error",
+    "react/jsx-wrap-multilines": "error",
     "react/jsx-tag-spacing": ["error", { "beforeSelfClosing": "always" }],
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
-    "react/jsx-wrap-multiline": "error",
     "react/prefer-es6-class": "warn",
     "react/prefer-stateless-function": "warn",
     "react/prop-types": ["warn", { "ignore": ["children"] }],
-    "react/require-render-return": "error",
-    "react/self-closing-comp": "error",
     "semi": "error"
   }
 }

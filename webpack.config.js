@@ -31,6 +31,23 @@ const entry = {
   ],
 };
 
+const rules = [
+  { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+  { test: /\.(png|jpg|jpeg|gif|ico)$/, use: 'url-loader?limit=1name=images/[name].[ext]' },
+  { test: /\.svg$/, use: 'svg-url-loader?limit=1name=images/[name].[ext]' },
+  { test: /\.(woff|woff2)$/, use: 'file-loader?name=fonts/[name].[ext]' },
+  {
+    test: /\.less$/,
+    loader: ExtractTextPlugin.extract({
+      fallback: 'style-loader',
+      use: [
+        'css-loader?modules&camelCase=dashes&importLoaders=1&localIdentName=[name]--[local]--[hash:base64:7]',
+        'less-loader',
+      ],
+    }),
+  },
+];
+
 const plugins = [
   new ExtractTextPlugin({ filename: '[name].[hash].css' }),
   new LoaderOptionsPlugin({ options: { minimize: true } }),
@@ -47,23 +64,6 @@ plugins.push(
     analyzerMode: 'static',
   })
 );
-
-const rules = [
-  { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-  { test: /\.(png|jpg|jpeg|gif|ico)$/, use: 'url-loader?limit=1name=images/[name].[ext]' },
-  { test: /\.svg$/, use: 'svg-url-loader?limit=1name=images/[name].[ext]' },
-  { test: /\.(woff|woff2)$/, use: 'file-loader?name=fonts/[name].[ext]' },
-  {
-    test: /\.less$/,
-    loader: ExtractTextPlugin.extract({
-      fallback: 'style-loader',
-      use: [
-        'css-loader?modules&camelCase=dashes&importLoaders=1&localIndentName=[name]-[local]-[hash:base64:7]',
-        'less-loader',
-      ],
-    }),
-  },
-];
 
 const config = {
   entry,
