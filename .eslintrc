@@ -1,0 +1,51 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["react", "jsx-a11y", "import"],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "amd": true,
+    "es6": true,
+    "node": true,
+    "jset": true
+  },
+  "globals": {
+    "expect": true
+  },
+  "rules": {
+    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+    "comma-dangle": ["error", "always-multiline"],
+    "no-alert": "warn",
+    "no-console": "warn",
+    "no-extra-semi": "error",
+    "no-trailing-spaces": ["warn", { "skipBlankLines": true }],
+    "no-undef": "error",
+    "no-underscore-dangle": "off",
+    "no-unreachable": "warn",
+    "no-unused-vars": "error",
+    "quotes": ["error", "single"],
+    "react/jsx-boolean-value": "error",
+    "react/jsx-closing-bracket-location": ["error", "tag-aligned"],
+    "react/jsx-curly-spacing": ["error", "never"],
+    "react/jsx-no-bind": ["error", { "allowArrowFunctions": true }],
+    "react/jsx-pascal-case": "error",
+    "react/jsx-tag-spacing": ["error", { "beforeSelfClosing": "always" }],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-wrap-multiline": "error",
+    "react/prefer-es6-class": "warn",
+    "react/prefer-stateless-function": "warn",
+    "react/prop-types": ["warn", { "ignore": ["children"] }],
+    "react/require-render-return": "error",
+    "react/self-closing-comp": "error",
+    "semi": "error"
+  }
+}

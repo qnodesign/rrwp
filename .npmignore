@@ -1,0 +1,12 @@
+.babelrc
+.editorconfig
+.eslintrc
+.eslintignore
+.gitignore
+.npmignore
+package-lock.json
+test/
+__snapshots__
+jest.config.*js
+src/**/*.test.jsx
+webpack.config.*js

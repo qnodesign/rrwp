@@ -1,0 +1,31 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ],
+    "react",
+    "stage-2"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ],
+        "react",
+        "stage-2"
+      ]
+    },
+    "production": {
+      "plugins": ["transform-class-properties", "add-react-displayname", "react-hot-loader/babel"]
+    }
+  }
+}
