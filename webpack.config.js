@@ -1,11 +1,9 @@
-import { request } from 'http';
-
 const path = require('path');
 const webpack = require('webpack');
 const LoaderOptionsPlugin = webpack.LoaderOptionsPlugin;
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackVisualizerPlugin = require('webpack-visualizer-plugin');
-const StatsWebpackPlugin = require('stats-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const srcPath = path.join(__dirname, 'src');
 const publicPath = '';
@@ -41,7 +39,14 @@ const plugins = [
 
 /* possible conditions */
 plugins.push(new WebpackVisualizerPlugin({ filename: '../reports/webpack-visualizer.html' }));
-plugins.push(new StatsWebpackPlugin('../reports/webpack-stats.json'));
+plugins.push(
+  new BundleAnalyzerPlugin({
+    statsFilename: '../reports/webpack-stats.json',
+    reportFilename: '../reports/webpack-report.html',
+    openAnalyzer: false,
+    analyzerMode: 'static',
+  })
+);
 
 const rules = [
   { test: /\.css$/, use: ['style-loader', 'css-loader'] },

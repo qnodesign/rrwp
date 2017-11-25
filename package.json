@@ -1,8 +1,9 @@
 {
-  "name": "React-redux-webpack-prettier",
-  "version": "0.1",
+  "name": "rrwp",
+  "version": "0.0.1",
   "description": "Base template for react redux app with webpack and prettier",
   "main": "server.js",
+  "homepage": "http://hefelle.me",
   "repository": {
     "type": "git",
     "url": "https://github.com/qnodesign/rrwp"
@@ -89,11 +90,11 @@
     "react-element-to-jsx-string": "13.1.0",
     "redux-mock-store": "1.3.0",
     "rimraf": "2.6.2",
-    "stats-webpack-plugin": "0.6.1",
     "style-loader": "0.19.0",
     "svg-url-loader": "2.3.0",
     "url-loader": "0.6.2",
     "webpack": "3.8.1",
+    "webpack-bundle-analyzer": "2.9.1",
     "webpack-dev-server": "2.9.4",
     "webpack-encoding-plugin": "0.2.1",
     "webpack-visualizer-plugin": "0.1.11"
@@ -105,16 +106,11 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "keywords": [
-    "react",
-    "redux",
-    "webpack",
-    "prettier"
-  ],
+  "keywords": ["react", "redux", "webpack", "prettier"],
   "author": {
     "name": "Konrad Hefelle (QNO)",
     "email": "qno@qno.hu",
     "url": "http://hefelle.me"
   },
-  "license": "MTI"
+  "license": "MIT"
 }
