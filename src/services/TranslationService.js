@@ -3,8 +3,8 @@ import parser from 'react-html-parser';
 import { error } from 'qno-console';
 import { setTranslationAction } from '../store/reducers/TranslationReducer';
 
-const isHtml = string => {
-  return string.includes('<') && string.includes('>') && string.includes('/>');
+const isHtml = str => {
+  return str.includes('<') && str.includes('>') && str.includes('</');
 };
 
 const resolve = (string, config) => {
@@ -20,10 +20,12 @@ const resolve = (string, config) => {
   }
 };
 
-export function loadTranslation(language) {
-  const translation = { [language]: require(`../resources/text-resources-${language}.json`) };
+export const loadTranslation = language => {
+  const translation = {
+    [language]: require(`../resources/text-resources-${language}.json`),
+  };
   store.dispatch(setTranslationAction(translation));
-}
+};
 
 export default (key, config) => {
   const language = store.getState().resources.language;
@@ -37,8 +39,14 @@ export default (key, config) => {
     throw 'Translations are not loaded';
   }
 
-  let translated = translation[language][key] || `NOT TRANSLATED: ${key}`;
-  translated = resolve(translated, config);
+  let res = translation[language][key] || false;
 
-  return isHtml(translated) ? parser(translated) : translated;
+  if (!res) {
+    return config && typeof config === 'boolean' ? res : `NOT TRANSLATED: ${key}`;
+  }
+  if (config) {
+    res = typeof config === 'boolean' ? false : resolve(res, config);
+  }
+
+  return isHtml(res) ? parser(res) : res;
 };

@@ -49,7 +49,7 @@ class App extends PureComponent {
           <ContainerWithProps>
             <Switch>
               {this.addRoutes()}
-              <Redirect to={mainPath} />
+              <Redirect exact from="/" to={mainPath} />
             </Switch>
           </ContainerWithProps>
         </Router>

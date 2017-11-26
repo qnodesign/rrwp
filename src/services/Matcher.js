@@ -1,3 +1,3 @@
-export function getParams(props) {
+export const getParams = props => {
   return props.match.params;
-}
+};

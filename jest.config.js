@@ -12,5 +12,5 @@ module.exports = {
   verbose: false,
   snapshotSerializers: ['<rootDir>/node_modules/enzyme-to-json/serializer'],
   setupTestFrameworkScriptFile: '<rootDir>/test/unit/setup.js',
-  transformIgnorePatterns: ['<rootDir>/node_modules/(?!(pp.*?\\.js$))', '<rootDir>/dist/\\.js$'],
+  transformIgnorePatterns: ['<rootDir>/node_modules/(?!(qno-console.*?\\.js$))', '<rootDir>/dist/\\.js$'],
 };
