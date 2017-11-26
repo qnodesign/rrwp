@@ -30,8 +30,8 @@ const plugins = [
   new CopyWebpackPlugin([
     {
       // TEMP
-      from: 'dev/images',
-      to: 'mock/images',
+      from: 'dev/images/*.*',
+      to: 'mock/images/[name].[ext]',
     },
     {
       from: 'dev/*.css',
