@@ -2,5 +2,7 @@
   "title": "Hello World",
   "heading": "This is the test of the rrwp application",
   "target.male": "An application for men",
-  "target.female": "An application for women"
+  "target.female": "An application for women",
+  "male": "Male",
+  "female": "Female"
 }

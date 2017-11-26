@@ -2,5 +2,7 @@
   "title": "Hello Világ",
   "heading": "Ez az rrwp alkalmazás tesztje",
   "target.male": "Egy alkalmazás férfiak számára",
-  "target.female": "Egy alkalmazás nők számára"
+  "target.female": "Egy alkalmazás nők számára",
+  "male": "Férfi",
+  "female": "Nő"
 }

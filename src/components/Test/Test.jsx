@@ -10,6 +10,8 @@ const Test = props => {
   const translations = {
     title: translate('title'),
     heading: translate('heading'),
+    male: translate('male'),
+    female: translate('female'),
     target: (params.target && translate(`target.${params.target}`)) || null,
   };
 
@@ -25,8 +27,7 @@ const Test = props => {
       <h1>{translations.title}</h1>
       {params.target && <h2>{translations.target}</h2>}
       <p>{translations.heading}</p>
-      <button onClick={toMale}>Male</button>
-      <button onClick={toFemale}>Female</button>
+      <button onClick={toMale}>{translations.male}</button> <button onClick={toFemale}>{translations.female}</button>
     </div>
   );
 };

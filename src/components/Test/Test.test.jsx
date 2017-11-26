@@ -7,7 +7,7 @@ jest.mock('../../services/TranslationService');
 jest.mock('../../services/RoutingService');
 
 describe('Test', () => {
-  test('is delicious', () => {
+  test('render', () => {
     const wrapper = shallow(<Test />);
     expect(wrapper).toMatchSnapshot();
   });

@@ -18,3 +18,18 @@ exports[`Test is delicious 1`] = `
   </button>
 </div>
 `;
+
+exports[`Test render 1`] = `
+<div
+  className="test"
+>
+  <h1 />
+  <p />
+  <button
+    onClick={[Function]}
+  />
+  <button
+    onClick={[Function]}
+  />
+</div>
+`;
