@@ -1,5 +1,4 @@
 [![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=qnodesign&repository=rrwp)](https://hub.docker.com/r/qnodesign/rrwp/builds/)
-`https://dockerbuildbadges.quelltext.eu/status.svg?organization=qnodesign&repository=rrwp`
 
 # React-redux-webpack-prettier
 
