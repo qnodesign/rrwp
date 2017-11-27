@@ -2,8 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const LoaderOptionsPlugin = webpack.LoaderOptionsPlugin;
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const WebpackVisualizerPlugin = require('webpack-visualizer-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+//const WebpackVisualizerPlugin = require('webpack-visualizer-plugin');
+//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const srcPath = path.join(__dirname, 'src');
 const publicPath = '';
@@ -54,7 +54,8 @@ const plugins = [
   new webpack.optimize.CommonsChunkPlugin({ names: ['vendor'] }),
 ];
 
-/* possible conditions */
+/* possible conditions
+
 plugins.push(new WebpackVisualizerPlugin({ filename: '../reports/webpack-visualizer.html' }));
 plugins.push(
   new BundleAnalyzerPlugin({
@@ -64,7 +65,7 @@ plugins.push(
     analyzerMode: 'static',
   })
 );
-
+*/
 const config = {
   entry,
   devtool: 'eval',
