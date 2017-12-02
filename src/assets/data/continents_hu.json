@@ -1,9 +1,9 @@
 {
-  "AE": "Afro-Eurázsia",
-  "AM": "Amerika",
-  "AU": "Ausztrálázsia",
-  "CA": "Karibi térség",
-  "CE": "Európa",
-  "ER": "Eurázsia",
-  "IC": "Indiai szubkontinens"
+  "Asia": "Ázsia",
+  "Americas": "Amerika",
+  "Africa": "Afrika",
+  "Oceania": "Ausztrália és Óceánia",
+  "Europe": "Európa",
+  "Polar": "Déli sark",
+  "w/o": "Földrész nélkül"
 }

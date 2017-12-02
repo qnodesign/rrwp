@@ -5,6 +5,7 @@ import ServiceCallManager from '../../services/ServiceCallManager';
 import Loading from '../common/Loading';
 import Flag from './Flag';
 import countries_hu from '../../assets/data/countries_hu.json';
+import continents_hu from '../../assets/data/continents_hu.json';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class CountryFlags extends React.PureComponent {
@@ -17,6 +18,15 @@ class CountryFlags extends React.PureComponent {
   componentDidMount() {
     ServiceCallManager.call('https://restcountries.eu/rest/v2/all').then(countries => {
       this.setState({ countries });
+      const ctyByRegion = {};
+      countries.map(cty => {
+        const region = cty.region !== '' ? cty.region : 'w/o';
+        if (!Object.keys(ctyByRegion).includes(region)) {
+          ctyByRegion[region] = [];
+        }
+        ctyByRegion[region].push(cty);
+      });
+      this.setState({ ctyByRegion });
     });
   }
 
@@ -44,28 +54,40 @@ class CountryFlags extends React.PureComponent {
   };
 
   render() {
-    const { countries, selected, modal } = this.state;
-    if (!countries.length) {
+    const { countries, ctyByRegion, selected, modal } = this.state;
+    if (!countries.length || !ctyByRegion) {
       return <Loading />;
     }
 
     return (
       <div className={styles.countires}>
         <h1>Countries</h1>
-
-        {countries.map(({ numericCode, name, flag }) => (
-          <div onClick={() => this.toggle(numericCode)} key={numericCode} className={styles.flags}>
-            <img width="100%" src={flag} alt={name} />
+        {Object.keys(ctyByRegion).map(key => (
+          <div key={key}>
+            <h2>{continents_hu[key]}</h2>{' '}
+            {ctyByRegion[key].map(({ numericCode, name, flag }) => (
+              <div onClick={() => this.toggle(numericCode)} key={numericCode} className={styles.flags}>
+                <img width="100%" src={flag} alt={name} />
+              </div>
+            ))}
           </div>
         ))}
         <Modal isOpen={modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>{selected && countries_hu[selected.alpha2Code]}</ModalHeader>
           <ModalBody>
-            <p>
-              Az ország neve: <strong>{selected && countries_hu[selected.alpha2Code]}</strong> (angolul:{' '}
-              {selected && selected.name})
-            </p>
-            <p>Földrész: </p>
+            {selected && (
+              <div className={styles.countryFlags}>
+                <p>
+                  Az ország neve: <strong>{countries_hu[selected.alpha2Code]}</strong>
+                  <br />(angolul: {selected.name}, németül: {selected.translations['de']})
+                </p>
+                <p>
+                  Földrész: {continents_hu[selected.region]}
+                  <br />(angolul: {selected.region}) , {selected.subregion}{' '}
+                </p>
+                <Flag flag={selected.flag} />
+              </div>
+            )}
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggle}>
@@ -83,7 +105,7 @@ class CountryFlags extends React.PureComponent {
           ))}
         </select>
         <br />
-        {selected && <Flag country={selected} />}
+        {selected && <Flag flag={selected.flag} />}
         <br />
         */}
         <button className="btn btn-primary" onClick={this.back}>

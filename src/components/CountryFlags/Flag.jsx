@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Flag = ({ country }) => {
-  return <img width="400" src={country.flag} />;
+const Flag = ({ flag }) => {
+  return <img width="300" src={flag} />;
 };
 
 Flag.propTypes = {
-  country: PropTypes.object,
+  flag: PropTypes.string,
 };
 
 export default Flag;
