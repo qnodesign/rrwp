@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const portSrc = require(path.join(__dirname, 'port'));
 
 const devServer = {
-  contentBase: './dist/',
+  contentBase: './public/',
   historyApiFallback: true,
   hot: true,
   port: portSrc.port,

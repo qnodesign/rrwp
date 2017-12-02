@@ -1,9 +1,7 @@
 node_modules
-docs
 .vscode
 .idea
 /*.iml
 npm-debug.log
 reports
-dist
-.travis.yml
+public

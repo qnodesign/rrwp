@@ -5,6 +5,7 @@ import { getParams } from '../../services/Matcher';
 import translate from '../../services/TranslationManager';
 import go, { gotoError } from '../../services/RoutingManager';
 import ServiceCallManager from '../../services/ServiceCallManager';
+import { Button } from 'reactstrap';
 
 const Test = props => {
   const params = getParams(props) || {};
@@ -33,8 +34,8 @@ const Test = props => {
     ServiceCallManager.call('https://jsonplaceholder.typicode.com/posts/2', { cache: 'default' }).then(info);
   };
 
-  const call = () => {
-    ServiceCallManager.call('https://jsonplaceholder.typicode.com/posts/1').then(info);
+  const CountryFlags = () => {
+    go('CountryFlags');
   };
 
   return (
@@ -43,25 +44,25 @@ const Test = props => {
       {params.target && <h2>{translations.target}</h2>}
       <p>{translations.heading}</p>
       <div className="btn-group" role="group" aria-label="Basic example">
-        <button className="btn btn-success" onClick={toMale}>
+        <Button color="success" onClick={toMale}>
           {translations.male}
-        </button>
-        <button className="btn btn-primary" onClick={toFemale}>
+        </Button>
+        <Button color="primary" onClick={toFemale}>
           {translations.female}
-        </button>
-        <button className="btn btn-danger" onClick={toError}>
+        </Button>
+        <Button color="danger" onClick={toError}>
           Error
-        </button>
-        <button className="btn btn-danger" onClick={jsError}>
+        </Button>
+        <Button color="danger" onClick={jsError}>
           JS Error
-        </button>
-        <button className="btn btn-info" onClick={call}>
-          service call
-        </button>
-        <button className="btn btn-warning" onClick={cahceCall}>
+        </Button>
+        <Button color="info" onClick={CountryFlags}>
+          Flags
+        </Button>
+        <Button color="warning" onClick={cahceCall}>
           service call cached
-        </button>
-      </div>{' '}
+        </Button>
+      </div>
     </div>
   );
 };

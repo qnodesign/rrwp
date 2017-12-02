@@ -31,13 +31,12 @@ class ServiceCallManager {
     const reqConfig = {
       body,
       method,
+      cache,
       headers: {
         ...headers,
         'Accept-Language': `${store.getState().resources.language}-CH,en,q=0.8,hu;q=0.7`,
         Accept: contentType,
         'X-Requested-With': 'XMLHttpRequest',
-        pragma: cache,
-        'cache-control': cache,
       },
       credentials: 'same-origin',
       mode: 'cross-origin',

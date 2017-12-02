@@ -17,8 +17,8 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "test:all": "jest --watchAll",
-    "clean": "rimraf dist",
-    "clean:all": "rimraf dist reports",
+    "clean": "rimraf public",
+    "clean:all": "rimraf public reports",
     "webpack:visualizer": "cross-env VISUALIZER=true webpack -p"
   },
   "lint-staged": {

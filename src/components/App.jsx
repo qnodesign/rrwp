@@ -8,6 +8,7 @@ import Container from './Container';
 
 /* components */
 import Test from './Test';
+import CountryFlags from './CountryFlags';
 import ErrorRenderer from './ErrorBoundary/ErrorRenderer';
 
 class App extends PureComponent {
@@ -21,6 +22,11 @@ class App extends PureComponent {
       {
         path: '/Test',
         component: Test,
+        main: true,
+      },
+      {
+        path: '/CountryFlags',
+        component: CountryFlags,
         main: true,
       },
       {

@@ -70,7 +70,7 @@ const config = {
   entry,
   devtool: 'eval',
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'public'),
     filename: '[name].[hash].js',
     chunkFilename: '[name].[hash].js',
     publicPath,
