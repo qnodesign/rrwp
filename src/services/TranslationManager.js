@@ -1,7 +1,6 @@
 import store from '../store/store';
 import parser from 'react-html-parser';
 import { error } from 'qno-console';
-import { setTranslationAction } from '../store/reducers/TranslationReducer';
 
 const isHtml = str => {
   return str.includes('<') && str.includes('>') && str.includes('</');
@@ -18,13 +17,6 @@ const resolve = (string, config) => {
   if (tests && tests.length) {
     error(`Translation config does not contain variables as of: ${tests}`);
   }
-};
-
-export const loadTranslation = language => {
-  const translation = {
-    [language]: require(`../resources/text-resources-${language}.json`),
-  };
-  store.dispatch(setTranslationAction(translation));
 };
 
 export default (key, config) => {

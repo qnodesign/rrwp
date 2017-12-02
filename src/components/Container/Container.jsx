@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
-import { loadTranslation } from '../../services/TranslationService';
+import { loadTranslation } from '../../services/StoreDispatcher';
 
 class Container extends PureComponent {
   loadTranslation(language, translation) {

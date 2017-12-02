@@ -3,8 +3,8 @@ import Test from './Test';
 import { shallow } from 'enzyme';
 
 jest.mock('../../services/Matcher');
-jest.mock('../../services/TranslationService');
-jest.mock('../../services/RoutingService');
+jest.mock('../../services/TranslationManager');
+jest.mock('../../services/RoutingManager');
 
 describe('Test', () => {
   test('render', () => {

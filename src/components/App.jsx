@@ -8,7 +8,7 @@ import Container from './Container';
 
 /* components */
 import Test from './Test';
-import ErrorRenderer from './ErrorRenderer';
+import ErrorRenderer from './ErrorBoundary/ErrorRenderer';
 
 class App extends PureComponent {
   constructor() {
