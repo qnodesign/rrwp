@@ -29,6 +29,10 @@ const Test = props => {
   const jsError = a => {
     a();
   };
+  const cahceCall = () => {
+    ServiceCallManager.call('https://jsonplaceholder.typicode.com/posts/2', { cache: 'default' }).then(info);
+  };
+
   const call = () => {
     ServiceCallManager.call('https://jsonplaceholder.typicode.com/posts/1').then(info);
   };
@@ -38,9 +42,26 @@ const Test = props => {
       <h1>{translations.title}</h1>
       {params.target && <h2>{translations.target}</h2>}
       <p>{translations.heading}</p>
-      <button onClick={toMale}>{translations.male}</button> <button onClick={toFemale}>{translations.female}</button>{' '}
-      <button onClick={toError}>Error</button> <button onClick={jsError}>JS Error</button>{' '}
-      <button onClick={call}>service call</button>
+      <div className="btn-group" role="group" aria-label="Basic example">
+        <button className="btn btn-success" onClick={toMale}>
+          {translations.male}
+        </button>
+        <button className="btn btn-primary" onClick={toFemale}>
+          {translations.female}
+        </button>
+        <button className="btn btn-danger" onClick={toError}>
+          Error
+        </button>
+        <button className="btn btn-danger" onClick={jsError}>
+          JS Error
+        </button>
+        <button className="btn btn-info" onClick={call}>
+          service call
+        </button>
+        <button className="btn btn-warning" onClick={cahceCall}>
+          service call cached
+        </button>
+      </div>{' '}
     </div>
   );
 };

@@ -15,8 +15,8 @@ class ServiceCallManager {
     if (!url) {
       throw 'No URL provided!';
     }
-
-    let { method = 'GET', params = null, body, contentType = 'application/json' } = config;
+    // cache: no-cache, force-cache, no-store, reload, default
+    let { method = 'GET', cache = 'no-cache', params = null, body, contentType = 'application/json' } = config;
     const headers = {};
 
     if (method === 'GET' && params && Object.keys(params).length) {
@@ -31,12 +31,13 @@ class ServiceCallManager {
     const reqConfig = {
       body,
       method,
-      cache: 'no-cache',
       headers: {
         ...headers,
         'Accept-Language': `${store.getState().resources.language}-CH,en,q=0.8,hu;q=0.7`,
         Accept: contentType,
         'X-Requested-With': 'XMLHttpRequest',
+        pragma: cache,
+        'cache-control': cache,
       },
       credentials: 'same-origin',
       mode: 'cross-origin',

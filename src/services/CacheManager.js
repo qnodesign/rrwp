@@ -19,22 +19,22 @@ class CacheManager {
     const isCacheable = method === 'GET' && cache;
     const key = params ? `${url}?${this.ServiceCallManager.composeQueryParameters(params)}` : url;
 
-    if (isCacheable && this.cache[key]) {
+    if (isCacheable && this.Cache[key]) {
       log(`Served from cache: ${key}`);
-      return Promise.resolve(this.cache[key]);
+      return Promise.resolve(this.Cache[key]);
     }
 
     return this.ServiceCallManager.call(url, config).then(response => {
       if (isCacheable) {
         log(`Request cached: ${key}`);
-        this.cache[key] = this.copy(response);
+        this.Cache[key] = this.copy(response);
       }
       return Promise.resolve(response);
     });
   }
 
   emptyCache() {
-    this.cache = {};
+    this.Cache = {};
   }
 }
 
