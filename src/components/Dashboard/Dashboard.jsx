@@ -10,7 +10,6 @@ class Dashboard extends React.PureComponent {
   constructor(props) {
     super(props);
     this.visibleOrders = orders.filter(obj => obj.caid !== '00000000');
-    console.log(this.visibleOrders);
     this.state = {
       showModal: false,
       session: null,
