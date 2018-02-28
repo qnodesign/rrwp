@@ -7,6 +7,7 @@ import store from '../store/store';
 import Container from './Container';
 
 /* components */
+import Dashboard from './Dashboard';
 import Test from './Test';
 import CountryFlags from './CountryFlags';
 import ErrorRenderer from './ErrorBoundary/ErrorRenderer';
@@ -22,11 +23,14 @@ class App extends PureComponent {
       {
         path: '/Test',
         component: Test,
-        main: true,
       },
       {
         path: '/CountryFlags',
         component: CountryFlags,
+      },
+      {
+        path: '/Dashboard',
+        component: Dashboard,
         main: true,
       },
       {
